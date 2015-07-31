@@ -47,7 +47,6 @@ namespace Uniduino
 				{
 					PortName = Arduino.guessPortName();
 				}
-				
 				Connect();								
 			}
 
@@ -91,7 +90,7 @@ namespace Uniduino
 		/// </summary>
 		public void Connect()
 		{
-			Log ("Connectiong to arduino at " + PortName + "...");		
+			Debug.Log ("Connectiong to arduino at " + PortName + "...");		
 			connect(PortName, Baud, true, RebootDelay);
 			
 			VersionDataReceived += delegate(int majorVersion, int minorVersion) 

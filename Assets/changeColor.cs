@@ -11,17 +11,19 @@ public class changeColor : MonoBehaviour {
 	public int pinValueA;
 	public float spinSpeed = 0.2f;
 
-	public GameObject cube;
+	//public GameObject cube;
 
 	// Use this for initialization
 	void Start () {
-		arduino = Arduino.global;
+		//arduino = Arduino.global;
 		//arduino = GameObject.Find("Cube").GetComponent<Arduino>();
 
+
+		//cube = GameObject.Find ("Cube");
+		//gameObject;
+		//arduino = GetComponent<Arduino>();
 		arduino.Setup (ConfigurePins);
 
-		cube = GameObject.Find ("Cube");
-		//arduino = cube.AddComponent<Arduino>();
 		//arduino = cube.GetComponent<Arduino>();
 
 	}
@@ -38,7 +40,7 @@ public class changeColor : MonoBehaviour {
 	void Update () {
 		pinValueA = arduino.analogRead (pinA);
 		pinValue = arduino.digitalRead (pin);
-		cube.transform.rotation = Quaternion.Euler (0, pinValueA * spinSpeed, 0);
+		transform.rotation = Quaternion.Euler (0, pinValueA * spinSpeed, 0);
 		if (pinValue == 1) {
 			gameObject.GetComponent<Renderer>().material.color = Color.blue;
 		} else {

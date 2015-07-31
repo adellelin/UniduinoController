@@ -22,7 +22,7 @@ namespace Uniduino.Examples
 
 		void Start () {
 		
-			arduino = Arduino.global;
+			//arduino = Arduino.global;
 			arduino.Log = (s) => Debug.Log("Arduino: " +s);
 			arduino.Setup(ConfigurePins);
 			
